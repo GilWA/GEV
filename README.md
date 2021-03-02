@@ -11,7 +11,7 @@ Cette application est une gestion d'événements (historiques ou autres) avec se
 * Un controle d'accès aux pages par le système d'authentification Identity, avec création de comptes utilisateurs.
 * Une gestion d'erreurs par log dans le journal d'événement système et dans un fichier avec un filtre.
 
-Cet application est utilisable librement telle quelle, sans support, à titre d'exemple de réalisations possibles avec ASP NET 5. Elle peut être adaptée / intégrée en partie ou en totalité à condition : 
+Elle est utilisable librement telle quelle, sans support, à titre d'exemple de réalisations possibles avec ASP NET 5. Elle peut être adaptée / intégrée en partie ou en totalité à condition : 
 
 1. que l'usage soit NON commercial.
 2. de mentionner explicitement dans le code de démarrage (éventuellement dans la page d'acceuil), la source et l'auteur Gilles NICOT - Web Applications.
