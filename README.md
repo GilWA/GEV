@@ -7,7 +7,7 @@ Cette application est une gestion d'événements (historiques au autres) avec se
 * Des Vues/Controlleurs de chaque entité principale, avec validations des saises dans les opérations de création/mise à jour.
 * Des contrôleurs API appelés par jQuery.
 * Une pagination/filtrage/tri d'une liste de données.
-* Une gestion de sessions pour mémoriser les choix utilisateurs.
+* Une gestion de sessions pour mémoriser les choix utilisateurs, avec une méthode d'extension permettant de sérialiser un objet métier en JSON.
 * Un controle d'accès aux pages par le système d'authentification Identity, avec création de comptes utilisateurs.
 * Une gestion d'erreurs par log dans le journal d'événement système et dans un fichier avec un filtre.
 
