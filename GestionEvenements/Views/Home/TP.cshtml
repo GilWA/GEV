@@ -1,0 +1,129 @@
+﻿<h2>TP</h2>
+
+@{
+    ViewData["Title"] = "Scénario TP + infos";
+}
+<h1>@ViewData["Title"]</h1>
+
+<h2>Scénario</h2>
+<ol>
+    <li>Création d'un projet MVC avec Auth base locale</li>
+    <li>Création d'un projet Lib "Modele" NET Standard (changer la version 2.0 en 2.1 si besoin) avec instal du PN System.ComponentModel.Annotations</li>
+    <li>NOK en raison du PN de génération de code des controlleurs : Création d'un projet Lib "Dal" NET Standard avec  + ref sur projet Modele + Création du GevDbContext</li>
+    <li>On créé le GevDbContext dans un SD Services/Dal</li>
+    <li>
+        <ol>
+            <li>Ref du projet Modele dans Dal et de Dal dans Gev</li>
+            <li>Install des PN EF Core du projet principal dans Dal</li>
+            <li>Création du GevDbContext avec config de la relation N-M de Participation</li>
+            <li>Suppr du Dossier Data dans Dev</li>
+            <li>Add-migration Creation dans Dal + Update-Database</li>
+        </ol>
+    </li>
+    <li>Install du PN MS.VS.Web.CodeGeneration.Design si la génération du controlleur+Vues est NOK</li>
+    <li>Complément des entités par les annotations (à partir des ViewModel, mais sans VM) + Génération du Ctrl+Vues pour les Participants et les Ev</li>
+    <li>Repo + Changement du code des controlleurs, avec PN System.Linq.Async pour faire un ToListAsync() sur IAsyncEnumerable</li>
+    <li>Compléter le RepoEvenements avec TypesEvenementAvecValeurVide : Mt AsQueryable nécessaire popur faire le OrderBy pour éliminer le conflit avec AsyncEnumerabme.OrderBy.</li>
+    <li>Finaliser les vues CU Participant avec la liste des valeurs de l'énum Civilite</li>
+    <li>Afficher la liste des participations dans la vue Details des Participant.</li>
+    <li>Exo : Faire la gestion des adresses + afficher l'adresse de l'év dans Ev.Details si elle existe ou proposer d'en créer une sinon</li>
+    <li>Rendre le Context public dans RepoBase pour pouvoir créer un Repo qui n'est pas injecté dans un cotrolleur, sans UOW (ex pour créer une adresse à partir d'un Ev).</li>
+    <li>Faire l'association d'une adresse à un ev</li>
+    <li>
+        <ol>
+            <li>Compléter l'action Adresse.Create avec l'idEv optionnel</li>
+            <li>Compléter la vue de creation d'adresse de manière simple (sans recherche d'adresses existantes)</li>
+            <li>Compléter l'action Adresse.Create avec l'idEv optionnel.</li>
+            <li>Penser à ajouter un champ caché pour AdresseId en édition d'un Ev !</li>
+            <li>
+                Pour une recherche d'adresses existantes :
+                <ol>
+                    <li>Ajouter le controlleur Api Adresses pour une recherche d'adresses</li>
+                    <li>Script adresse-create.js</li>
+                    <li>Compléter la vue</li>
+                    <li>Ajouter le controlleur Api Evenements pour maj l'ev avec une chaîne SQL</li>
+                </ol>
+            </li>
+            <li>Pour retirer une adresse d'un ev : ajouter une action "rad" au ctrl Evenements et faire l'appel dans la vue Details de l'ev.</li>
+        </ol>
+    </li>
+    <li>Faire une pagination de la liste des ev</li>
+    <li>
+        <ol>
+            <li>Montrer comment transmettre un dico à un Ctrl avec asp-all-route-data : Exemples/routedata</li>
+            <li>PN X.PagedList.Mvc.Core et X.PagedList.Mvc.Bootstrap4</li>
+            <li>Compléter le Repo Ev avec EvenementsTries</li>
+            <li>Compléter l'action Index des Ev</li>
+            <li>Compléter la vue</li>
+        </ol>
+    </li>
+    <li>Inscription</li>
+    <li>
+        <ol>
+            <li>Ajouter la méthode Inscription dans Api/EvCtrl</li>
+            <li>Créer l'action Inscription du Ctrl Ev + Vue pour afficher la liste des ev</li>
+            <li>Ajouter un lien dans la fiche Détail du participant pour atteindre cette vue en transmettant l'idPa avec affichage du nom du participant. Son Id est placé dans le ViewBag de la vue Inscription.</li>
+            <li>Ajouter un input type button avec les attributs data-idev et data-idpa.</li>
+            <li>Ajouter le script inscription.js : on utilise la présence de l'attribut data-idev pour l'abonnenement au clic avec jQuery.</li>
+        </ol>
+    </li>
+    <li>Filtrage de la liste des ev dans une inscription</li>
+    <li>
+        <ol>
+            <li>Ajouter la méthode  Liste(string filtre) dans le repoEv : le résultat est une liste car on veut obtenir le nombre de réponses dans le controlleur.</li>
+            <li>Compléter l'action Inscription avec l'argument texteRecherche</li>
+            <li>Ajouter le form dans la vue Inscription qui fait un get. Le texte de recherche est placée dans le ViewBag pour le conserver.</li>
+            <li>Ajouter le test d'exsistence du Model dans la vue si on a pas de résultat</li>
+        </ol>
+    </li>
+    <li>Ajout de l'entité Intérêts</li>
+    <li>
+        <ol>
+            <li>Ajouter l'entité au modèle et le DbSet au context.</li>
+            <li>Créer la migration Interets.</li>
+            <li>Ajouter la mt Migrer au context.</li>
+            <li>Ajouter un Ctrl DbTools avec une vue pour afficher le nbr de lignes des entitiés principales dans l'action Index et applique la migration en attente dans l'action Migration</li>
+            <li>Exo : Faire le InteretsController par défaut (avec GevDbContexte, sans Dal/Repo).</li>
+        </ol>
+    </li>
+    <li>Identity</li>
+    <li>
+        <ol>
+            <li>Ajouter un Ctrl pour scafolder Identity.</li>
+            <li>Ajouter l'attribut Autorize sur les Ctrl DbTools.</li>
+            <li>Idem sur le Ctrl Adresses.</li>
+            <li>
+                Pour proposer seulement l'affichage si on est pas connecté :
+                ajouter l'attribut Autorize sur les Ctrl Ev et Participants
+                et AllowAnonymous sur les actions Index et Details.
+            </li>
+        </ol>
+    </li>
+    <li>Sessions</li>
+    <li>
+        <ol>
+            <li>Install du PN PN Microsoft.AspNetCore.Session.</li>
+            <li>Config du Sce Sessions dans Startup + ajout de app.UseSession() avant UseRouting dans le Pipeline.</li>
+            <li>Montrer le principe dans un Ctrl pour atteindre HttpContext.Session (EN Microsoft.AspNetCore.Http) du Ctrlr.</li>
+            <li>Ajout de SessionExtensions (même EN Microsoft.AspNetCore.Http) dans un SD Sces/Sessions pour sérializer des objets en JSON.</li>
+            <li>Montrer l'utilisation des CtrlExemples/Sessions.</li>
+        </ol>
+    </li>
+    <li>TP Sessions</li>
+    <li>
+        <ol>
+            <li>Créer un SelectionInterets dans Sces/sessions pour encapsuler la session avec les Op CRUD de la liste d'intérêts.</li>
+            <li>Modifier le Ctrl Interets (sans Details) pour utiliser ce sce à la place de la Dal (garder le RepoInterets qui sera mofifié pour gérer la persistance des sessions et accéder aux listes de valeurs)</li>
+            <li>On utilise EvenementId comme clé dans le Ctrl et SelectionInterets pour éviter d'utiliser l'Id de l'entité (pb si on veut enregistrer des lignes qui existent déjà en base du fait qu'elles ont un Id. De + , on l'efface au chargement des lignes). On efface les anciennes lignes avec la UserId.</li>
+            <li>On ajoute une Pté TitreEvenement NotMapped à l'entité Interet pour mémoriser le titre en CU pour ne pas avoir à recharger l'ev. qd on a besoin de l'afficher.</li>
+            <li>Récupérer UserId dans RepoInterets + Paramètre UserIdDev utilisé en mode Dev (Pte IsDevelopment définie dans Startup).</li>
+            <li>Appel de DetruireSession dans la vue Logout</li>
+        </ol>
+    </li>
+</ol>
+
+<p>Remarque : pour les lib, changer la version 2.0 en 2.1 si besoin.</p>
+
+<h2>Comptes</h2>
+<p>user1@dom.com + Secret.1</p>
+<p>user2@dom.com + Secret.2</p>

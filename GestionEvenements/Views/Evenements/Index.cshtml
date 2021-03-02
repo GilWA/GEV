@@ -1,0 +1,57 @@
+﻿@*@model IEnumerable<Modele.Evenement>*@
+@model X.PagedList.IPagedList<Modele.Evenement>
+@using X.PagedList.Mvc.Core;
+@using X.PagedList
+@using X.PagedList.Mvc.Bootstrap4.Core
+@{
+    ViewData["Title"] = "Evénements";
+}
+
+<h1>Evénements</h1>
+<p>
+    <a asp-action="Create">Nouvelle fiche</a>
+</p>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.ActionLink("Titre", "Index", new { sensTri = ViewBag.TriTitre })
+            </th>
+            <th>
+                @Html.ActionLink("Année", "Index", new { sensTri = ViewBag.TriAnnee })
+            </th>
+            <th>
+                Date
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td style="width:500px">
+                    @Html.DisplayFor(modelItem => item.Titre)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Annee)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.DateEvenement)
+                </td>
+                <td>
+                    <a asp-action="Details" asp-route-id="@item.EvenementId">Fiche</a> |
+                    <a asp-action="Edit" asp-route-id="@item.EvenementId">Modifier</a> |
+                    <a asp-action="Delete" asp-route-id="@item.EvenementId">Supprimer</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+<br />
+
+@*IPagedList
+    Page @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber) of @Model.PageCount*@
+
+@Html.PagedListPager((IPagedList)Model, page => Url.Action("Index", new { page, sensTri = ViewBag.SensTri }), Bootstrap4PagedListRenderOptions.ClassicPlusFirstAndLast)

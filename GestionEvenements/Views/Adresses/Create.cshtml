@@ -1,0 +1,133 @@
+﻿@model Modele.Adresse
+
+@{
+    ViewData["Title"] = "Nouvelle fiche";
+}
+
+<h1>Adresse</h1>
+@*@if (ViewBag.EvenementId != null)
+    {
+        <h4>Création d'une adresse pour l'événement @ViewBag.TitreEvenement</h4>
+    }
+    else
+    {
+        <h4>Création</h4>
+    }*@
+
+@{
+    if (ViewBag.EvenementId != null)
+    {
+        <input type="hidden" value="@ViewBag.EvenementId" id="ide" />
+
+        <div class="row">
+            <div class="col-md-6">
+                <h2>Nouvelle adresse pour l'événement @ViewBag.TitreEvenement</h2>
+
+                <div class="form-group">
+                    <a asp-action="Details" asp-controller="Evenements" asp-route-id="@ViewBag.EvenementId">Retour à l'événement</a>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <h2>Recherche d'une adresse existante</h2>
+                <input id="ida" type="hidden" />
+                <input id="ad" type="hidden" />
+                <input type="text" id="txtCpVille" title="Entrez un Code postal ou une ville" placeholder="(Ville ou CodePostal)" />
+                <input type="submit" value="Rechercher" id="btnRechercher" />
+                <div id="divResultats"></div>
+            </div>
+        </div>
+
+        <!-- Modal Static backdrop  -->
+        <div class="modal fade" id="divConfirm" data-backdrop="static" tabindex="-1" role="dialog" aria-labelledby="staticBackdropLabel">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h3 class="modal-title" id="staticBackdropLabel">Lien avec une adresse</h3>
+                    </div>
+                    <div class="modal-body" id="libAd">
+                        Associer cette adresse au contact ?
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-info" data-dismiss="modal">Annuler</button>
+                        <button type="button" class="btn btn-primary" data-dismiss="modal" id="btnCreer" >Ajouter</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    }
+    else
+    {
+        <h2>Nouvelle adresse</h2>
+        <div>
+            <a asp-action="Index">Retour à la liste</a>
+        </div>
+    }
+}
+<hr />
+<form asp-action="Create">
+    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+    <div class="row">
+        <div class="col-md-6">
+            <div class="form-group">
+                <label asp-for="Titre" class="control-label"></label>
+                <input asp-for="Titre" class="form-control" />
+                <span asp-validation-for="Titre" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Rue" class="control-label"></label>
+                <input asp-for="Rue" class="form-control" />
+                <span asp-validation-for="Rue" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="CodePostal" class="control-label"></label>
+                <input asp-for="CodePostal" class="form-control" />
+                <span asp-validation-for="CodePostal" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Ville" class="control-label"></label>
+                <input asp-for="Ville" class="form-control" />
+                <span asp-validation-for="Ville" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="form-group">
+                <label asp-for="Region" class="control-label"></label>
+                <input asp-for="Region" class="form-control" />
+                <span asp-validation-for="Region" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Pays" class="control-label"></label>
+                <input asp-for="Pays" class="form-control" />
+                <span asp-validation-for="Pays" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="Latitude" class="control-label"></label>
+                <input asp-for="Latitude" class="form-control" />
+                <span asp-validation-for="Latitude" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Longitude" class="control-label"></label>
+                <input asp-for="Longitude" class="form-control" />
+                <span asp-validation-for="Longitude" class="text-danger"></span>
+            </div>
+        </div>
+    </div>
+    <div class="form-group">
+        <label asp-for="Notes" class="control-label"></label>
+        <input asp-for="Notes" class="form-control" />
+        <span asp-validation-for="Notes" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <input type="submit" value="Create" class="btn btn-primary" asp-route-id="@ViewBag.EvenementId" />
+    </div>
+</form>
+
+<div>
+    <a asp-action="Index">Liste</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+    <script src="~/js/adresse_create.js"></script>
+}

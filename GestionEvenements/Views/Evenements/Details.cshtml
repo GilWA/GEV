@@ -1,0 +1,117 @@
+﻿@model Modele.Evenement
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Evenement</h1>
+
+<div>
+    <h4>Fiche</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.TypeEvenementId)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.TypeEvenement.Libelle)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Titre)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Titre)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Annee)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Annee)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.DateEvenement)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.DateEvenement)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Description)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Description)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Url)
+        </dt>
+        <dd class="col-sm-10">
+            <a href="@Html.DisplayFor(model => model.Url)" target="_blank">Lien</a>
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.EvenementId">Modifier</a> |
+    <a asp-action="Index">Liste</a>
+</div>
+
+<hr />
+<div>
+    <h3>Adresse</h3>
+    @if (Model.AdresseId.HasValue)
+    {
+        <p>@Model.Adresse.Titre</p>
+        <p>@Model.Adresse.Rue @Model.Adresse.CodePostal @Model.Adresse.Ville</p>
+        <p>@Model.Adresse.Region @Model.Adresse.Pays</p>
+        <p>@Model.Adresse.Notes</p>
+        <div>
+            <a asp-action="ra" asp-controller="Evenements"  asp-route-id="@Model.EvenementId">Retirer l'adresse</a>
+        </div>
+    }
+    else
+    {
+        <div>
+            <a asp-action="Create" asp-controller="Adresses" asp-route-id="@Model.EvenementId">Ajouter une adresse</a>
+        </div>
+    }
+</div>
+
+<hr />
+<h4 style="margin-top:20px">Participations</h4>
+
+<table class="table">
+    <thead>
+    <tr>
+        <th>
+            Civilité
+        </th>
+        <th>
+            Nom
+        </th>
+        <th>
+            Activités
+        </th>
+
+        <th></th>
+    </tr>
+    </thead>
+    <tbody>
+    @foreach (var item in Model.Participations)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Participant.Civilite)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Participant.Prenom)&nbsp;
+                @Html.DisplayFor(modelItem => item.Participant.Nom)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Participant.Activites)
+            </td>
+            <td>
+                <a asp-controller="Participants" asp-action="Details" asp-route-id="@item.ParticipantId">Fiche</a>
+            </td>
+        </tr>
+    }
+    </tbody>
+</table>
+
