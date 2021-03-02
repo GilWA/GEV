@@ -3,7 +3,7 @@ Cette application est une gestion d'événements (historiques au autres) avec se
 
 * Une interface Web responsive basée sur Bootstrap.
 * Un modèle de données avec des relations 1-N et N-M.
-* Une persitance des données réalisée avec des repository afin de centraliser les accès à une base SQL Server LocalDb via EF Core.
+* Une persitance des données réalisée avec des repositories afin de centraliser les accès à une base SQL Server LocalDb via EF Core.
 * Des Vues/Controlleurs de chaque entité principale, avec validations des saises dans les opérations de création/mise à jour.
 * Des contrôleurs API appelés par jQuery.
 * Une pagination/filtrage/tri d'une liste de données.
