@@ -1,5 +1,5 @@
 # GEV
-Cette application est une gestion d'événements (historiques au autres) avec ses participants réalisée en ASP CORE NET 5 comprenant les éléments suivants :
+Cette application est une gestion d'événements (historiques ou autres) avec ses participants réalisée en ASP CORE NET 5 comprenant les éléments suivants :
 
 * Une interface Web responsive basée sur Bootstrap.
 * Un modèle de données avec des relations 1-N et N-M.
