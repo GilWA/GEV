@@ -1,0 +1,90 @@
+01/03/2021 12:42:40
+System.ApplicationException
+Erreur non gérée !
+Controller/Action : Home/Tests
+at GestionEvenements.Controllers.HomeController.Tests(String message) in D:\Docs\_KA\NET5\Ateliers\GestionEvenements\GestionEvenements\Controllers\HomeController.cs:line 35
+   at lambda_method38(Closure , Object , Object[] )
+------------------------------------------------------------------------------------------------------------------------------------------------------
+01/03/2021 14:10:51
+System.ApplicationException
+Erreur non gérée !
+Controller/Action : Home/Tests
+at GestionEvenements.Controllers.HomeController.Tests(String message) in D:\Docs\_KA\NET5\Ateliers\GestionEvenements\GestionEvenements\Controllers\HomeController.cs:line 35
+   at lambda_method38(Closure , Object , Object[] )
+------------------------------------------------------------------------------------------------------------------------------------------------------
+01/03/2021 14:11:37
+System.ApplicationException
+Erreur non gérée !
+Controller/Action : Home/Tests
+at GestionEvenements.Controllers.HomeController.Tests(String message) in D:\Docs\_KA\NET5\Ateliers\GestionEvenements\GestionEvenements\Controllers\HomeController.cs:line 35
+   at lambda_method38(Closure , Object , Object[] )
+------------------------------------------------------------------------------------------------------------------------------------------------------
+01/03/2021 14:13:16
+System.ApplicationException
+Erreur non gérée !
+Controller/Action : Home/Tests
+at GestionEvenements.Controllers.HomeController.Tests(String message) in D:\Docs\_KA\NET5\Ateliers\GestionEvenements\GestionEvenements\Controllers\HomeController.cs:line 35
+   at lambda_method38(Closure , Object , Object[] )
+------------------------------------------------------------------------------------------------------------------------------------------------------
+01/03/2021 14:13:45
+System.ApplicationException
+Erreur non gérée !
+Controller/Action : Home/Tests
+at GestionEvenements.Controllers.HomeController.Tests(String message) in D:\Docs\_KA\NET5\Ateliers\GestionEvenements\GestionEvenements\Controllers\HomeController.cs:line 35
+   at lambda_method38(Closure , Object , Object[] )
+------------------------------------------------------------------------------------------------------------------------------------------------------
+01/03/2021 14:16:15
+System.ApplicationException
+Erreur non gérée !
+Controller/Action : Home/Tests
+at GestionEvenements.Controllers.HomeController.Tests(String message) in D:\Docs\_KA\NET5\Ateliers\GestionEvenements\GestionEvenements\Controllers\HomeController.cs:line 35
+   at lambda_method38(Closure , Object , Object[] )
+------------------------------------------------------------------------------------------------------------------------------------------------------
+01/03/2021 14:51:13
+System.ApplicationException
+Erreur non gérée de adresses !
+Controller/Action : Adresses/Index
+at GestionEvenements.Controllers.AdressesController.Index() in D:\Docs\_KA\NET5\Ateliers\GestionEvenements\GestionEvenements\Controllers\AdressesController.cs:line 29
+------------------------------------------------------------------------------------------------------------------------------------------------------
+01/03/2021 15:01:54
+System.ApplicationException
+Erreur non gérée dans adresses !
+Controller/Action : Adresses/Index
+at GestionEvenements.Controllers.AdressesController.Index() in D:\Docs\_KA\NET5\Ateliers\GestionEvenements\GestionEvenements\Controllers\AdressesController.cs:line 29
+------------------------------------------------------------------------------------------------------------------------------------------------------
+01/03/2021 15:03:38
+System.ApplicationException
+Erreur non gérée dans adresses !
+Controller/Action : Adresses/Index
+at GestionEvenements.Controllers.AdressesController.Index() in D:\Docs\_KA\NET5\Ateliers\GestionEvenements\GestionEvenements\Controllers\AdressesController.cs:line 29
+------------------------------------------------------------------------------------------------------------------------------------------------------
+01/03/2021 15:05:25
+System.ApplicationException
+Erreur non gérée dans adresses !
+Controller/Action : Adresses/Index
+at GestionEvenements.Controllers.AdressesController.Index() in D:\Docs\_KA\NET5\Ateliers\GestionEvenements\GestionEvenements\Controllers\AdressesController.cs:line 29
+------------------------------------------------------------------------------------------------------------------------------------------------------
+01/03/2021 15:07:22
+System.ApplicationException
+Erreur non gérée dans adresses !
+Controller/Action : Adresses/Index
+at GestionEvenements.Controllers.AdressesController.Index() in D:\Docs\_KA\NET5\Ateliers\GestionEvenements\GestionEvenements\Controllers\AdressesController.cs:line 29
+------------------------------------------------------------------------------------------------------------------------------------------------------
+01/03/2021 15:08:20
+System.ApplicationException
+Erreur non gérée dans adresses !
+Controller/Action : Adresses/Index
+at GestionEvenements.Controllers.AdressesController.Index() in D:\Docs\_KA\NET5\Ateliers\GestionEvenements\GestionEvenements\Controllers\AdressesController.cs:line 29
+------------------------------------------------------------------------------------------------------------------------------------------------------
+01/03/2021 15:10:13
+System.ApplicationException
+Erreur non gérée dans adresses !
+Controller/Action : Adresses/Index
+at GestionEvenements.Controllers.AdressesController.Index() in D:\Docs\_KA\NET5\Ateliers\GestionEvenements\GestionEvenements\Controllers\AdressesController.cs:line 29
+------------------------------------------------------------------------------------------------------------------------------------------------------
+01/03/2021 15:11:10
+System.ApplicationException
+Erreur non gérée dans adresses !
+Controller/Action : Adresses/Index
+at GestionEvenements.Controllers.AdressesController.Index() in D:\Docs\_KA\NET5\Ateliers\GestionEvenements\GestionEvenements\Controllers\AdressesController.cs:line 29
+------------------------------------------------------------------------------------------------------------------------------------------------------

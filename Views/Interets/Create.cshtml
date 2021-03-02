@@ -1,0 +1,42 @@
+﻿@model Modele.Interet
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Interet</h1>
+<h4>Création</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input asp-for="UserId" type="hidden" class="form-control" />
+            <div class="form-group">
+                <label asp-for="EvenementId" class="control-label"></label>
+                <select asp-for="EvenementId" class="form-control" asp-items="ViewBag.EvenementId"></select>
+            </div>
+            <div class="form-group">
+                <label asp-for="Rating" class="control-label"></label>
+                <input asp-for="Rating" class="form-control" />
+                <span asp-validation-for="Rating" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Commentaires" class="control-label"></label>
+                <input asp-for="Commentaires" class="form-control" />
+                <span asp-validation-for="Commentaires" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Enregistrer" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Liste</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
